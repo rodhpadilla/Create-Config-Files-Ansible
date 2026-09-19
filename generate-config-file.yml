@@ -1,0 +1,12 @@
+
+---
+- hosts: localhost
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: Generate config file
+      template:
+        src: "config-template.j2"
+        dest: /home/developer/ansible_user/configuration-file.txt
+

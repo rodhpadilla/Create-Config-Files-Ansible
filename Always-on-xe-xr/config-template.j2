@@ -1,0 +1,12 @@
+interface {{ interface }}
+ ip address {{ ip_address }}
+ description {{ description }}
+ no shutdown
+!
+router bgp {{ as }}
+bgp router-id {{ router_id}}
+neighbor {{ neighbor_ip }} remote-as {{ remote_as }} 
+{% for network in networks %}
+network {{ network}} 
+{% endfor %}
+
